@@ -1,0 +1,209 @@
+/* =====================================================
+   ARM TAXI – ADMIN PANEL (Dashboard + Orders)
+   Mobile First • Clean • Professional
+===================================================== */
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+.admin-header {
+  background: #111827;
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.admin-header h1 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* ---------- HAMBURGER ---------- */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ---------- NAV ---------- */
+.admin-header nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin-header nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.admin-header nav a.active,
+.admin-header nav a:hover {
+  background: #1f2937;
+  color: #fff;
+}
+
+.admin-header nav button {
+  background: #ef4444;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* ---------- MAIN ---------- */
+.dashboard-container,
+.orders-container {
+  padding: 18px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ---------- STATS GRID ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.stat-card h3 {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ---------- TABLE ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+thead {
+  background: #f1f5f9;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  color: #374151;
+  font-weight: 600;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* ---------- STATUS ---------- */
+.status-pending {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.status-approved {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-approve {
+  background: #16a34a;
+  color: #fff;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
+
+  .admin-header {
+    flex-wrap: wrap;
+  }
+
+  .admin-header nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #111827;
+    margin-top: 12px;
+    padding: 10px 0;
+    display: none;
+  }
+
+  .admin-header nav.active {
+    display: flex;
+  }
+
+  .admin-header nav a,
+  .admin-header nav button {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 0;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

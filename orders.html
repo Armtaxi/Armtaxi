@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ARM Taxi – Orders</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="admin-header">
+  <h1>ARM Taxi – Orders</h1>
+
+  <div class="hamburger" onclick="toggleAdminMenu()">☰</div>
+
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="orders.html" class="active">Orders</a>
+    <button onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="orders-container">
+  <div class="table-wrapper">
+    <table id="ordersTable">
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>Journey</th>
+          <th>Customer</th>
+          <th>Route</th>
+          <th>Vehicle</th>
+          <th>Date</th>
+          <th>Fare Status</th>
+          <th>Total Fare (₹)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="ordersBody">
+        <!-- Injected by JS -->
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<!-- ================= SCRIPTS ================= -->
+<script type="module" src="js/orders.js"></script>
+<script>
+  function toggleAdminMenu() {
+    document.querySelector(".admin-header nav")
+      .classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

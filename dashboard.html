@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ARM Taxi – Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <header class="admin-header">
+    <h1>ARM Taxi – Dashboard</h1>
+    <div class="hamburger" onclick="toggleAdminMenu()">☰</div>
+
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="orders.html">Orders</a>
+      <button id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <h3>Total Orders</h3>
+        <p id="totalOrders">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Pending Orders</h3>
+        <p id="pendingOrders">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Approved Orders</h3>
+        <p id="approvedOrders">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Revenue (₹)</h3>
+        <p id="totalRevenue">₹0</p>
+      </div>
+    </section>
+
+    <section class="recent-orders">
+      <h2>Recent Bookings</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>Journey</th>
+            <th>Customer</th>
+            <th>Vehicle</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="recentOrdersBody">
+          <!-- JS inject -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script type="module" src="js/dashboard.js"></script>
+  <script>
+function toggleAdminMenu() {
+  document.querySelector('.admin-header nav')
+    .classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
